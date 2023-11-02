@@ -7,6 +7,8 @@ public class Thorn : MonoBehaviour
 	public GameObject	Player;
 	public int			attackDamage;
 
+	private bool    isPlayerCollision = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,16 +16,24 @@ public class Thorn : MonoBehaviour
 	}
 
     // Update is called once per frame
-    void Update()
-    {
-	
-    }
-
-	void OnCollisionStay2D(Collision2D collision) {
-		if (collision.collider.gameObject.CompareTag("Player") && Player.GetComponent<Ability>().isCollision == false) {
+    void Update() {
+		if (isPlayerCollision == true && Player.GetComponent<Ability>().isPossibleCollision == true) {
 			Player.GetComponent<Ability>().HP -= attackDamage;
-			Player.GetComponent<Ability>().isCollision = true;
+			Player.GetComponent<Ability>().isPossibleCollision = false;
 		}
 	}
+
+	void OnTriggerEnter2D(Collider2D collider) {
+		if (collider.gameObject.CompareTag("Player")) {
+			isPlayerCollision = true;
+		}
+	}
+
+	void OnTriggerExit2D(Collider2D collider) {
+		if (collider.gameObject.CompareTag("Player")) {
+			isPlayerCollision = false;
+		}
+	}
+
 }
 

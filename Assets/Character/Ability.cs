@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class Ability : MonoBehaviour
 {
-	public int		HP;
-	public int		maxHP;
+	public int	HP;
+	public int	maxHP;
+	public int	heal;
 	
 
 	public float	coolTime;
 	private float	updateTime = 0.0f;
 
-	public bool		isCollision = false;	
+	public bool		isPossibleCollision = true;	
 	public float	collisionTime;
 	private float	collisionUpdateTime = 0.0f;
 
@@ -26,7 +27,7 @@ public class Ability : MonoBehaviour
     {
         if (updateTime >= coolTime) {
 			updateTime = 0.0f;
-			this.HP += 2;
+			this.HP += heal;
 		} else {
 			updateTime += Time.deltaTime;
 		}
@@ -37,10 +38,10 @@ public class Ability : MonoBehaviour
 			HP = maxHP;
 		}
 
-		if (isCollision == true) {
+		if (isPossibleCollision == false) {
 			collisionUpdateTime += Time.deltaTime;
 			if (collisionUpdateTime >= collisionTime) {
-				isCollision = false;
+				isPossibleCollision = true;
 				collisionUpdateTime = 0.0f;
 			}
 		}
