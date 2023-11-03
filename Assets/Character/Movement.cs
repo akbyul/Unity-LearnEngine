@@ -14,7 +14,11 @@ public class move_heart : MonoBehaviour
     }
 
     // Update is called once per frame
-	void Update()
+	void UPdate() {
+	
+	}
+
+	void FixedUpdate()
 	{
 		// 스틱이 향해있는 방향을 저장해준다.
 		Vector3	dir = new Vector3(js.Horizontal, js.Vertical, 0);

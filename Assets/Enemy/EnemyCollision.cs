@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Thorn : MonoBehaviour
+public class EnemyCollision : MonoBehaviour
 {
 	public GameObject	Player;
 	public int			attackDamage;
 
-	private bool    isPlayerCollision = false;
+	protected bool    isPlayerCollision = false;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +34,19 @@ public class Thorn : MonoBehaviour
 			isPlayerCollision = false;
 		}
 	}
+
+	void OnCollisionEnter2D(Collision2D collision) {
+		if (collision.collider.gameObject.CompareTag("Player")) {
+			isPlayerCollision = true;
+		}
+	}
+
+	void OnCollisionExit2D(Collision2D collision) {
+		if (collision.collider.gameObject.CompareTag("Player")) {
+			isPlayerCollision = false;
+		}
+	}
+
 
 }
 

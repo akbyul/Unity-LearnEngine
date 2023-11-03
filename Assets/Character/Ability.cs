@@ -45,5 +45,5 @@ public class Ability : MonoBehaviour
 				collisionUpdateTime = 0.0f;
 			}
 		}
-    }
+	}
 }

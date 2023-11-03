@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 1146661238033662961}
   - component: {fileID: 7367778992879960306}
   m_Layer: 0
-  m_Name: Prefab
-  m_TagString: Enemy
+  m_Name: Thorn
+  m_TagString: Thorn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
