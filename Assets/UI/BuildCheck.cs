@@ -14,9 +14,6 @@ public class BuildCheck : MonoBehaviour
 		if (button != null) {
 			button.onClick.AddListener(Destroy);
 		}
-		if (buildButton == null) {
-			Debug.Log("tset");
-		}
 	}
 
 	// Update is called once per frame
@@ -28,6 +25,7 @@ public class BuildCheck : MonoBehaviour
 	void Destroy() {
 		int	size = gameObject.transform.childCount;
 
+		GameObject.Find("CanvasInGame").transform.Find("BuildButton").gameObject.SetActive(true);
 		Destroy(gameObject.transform.parent.gameObject);
 	}
 }
