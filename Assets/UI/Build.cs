@@ -5,12 +5,15 @@ using UnityEngine.UI;
 
 public class Build : MonoBehaviour
 {
-	public Transform	pref;
+	public GameObject	player;
+	public Transform	prefBuliding;
+	public Transform	prefUI;
 	private Button		button;
 
 	// Start is called before the first frame update
 	void Start()
     {
+		player = GameObject.Find("Player");
 		button = this.transform.GetComponent<Button>();
 		if (button != null) {
 			button.onClick.AddListener(build);
@@ -23,7 +26,8 @@ public class Build : MonoBehaviour
     }
 
 	void build() {
-		Instantiate(pref, new Vector3(0, 0, 0), Quaternion.identity);
+		Instantiate(prefBuliding, new Vector3(Mathf.Round(player.GetComponent<Transform>().position.x), Mathf.Round(player.GetComponent<Transform>().position.y + 2) , Mathf.Round(player.GetComponent<Transform>().position.z)), Quaternion.identity);
+		Instantiate(prefUI, new Vector3(Mathf.Round(player.GetComponent<Transform>().position.x), Mathf.Round(player.GetComponent<Transform>().position.y + 2) , Mathf.Round(player.GetComponent<Transform>().position.z)), Quaternion.identity);
 	}
 
 }
