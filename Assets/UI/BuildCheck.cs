@@ -5,15 +5,13 @@ using UnityEngine.UI;
 
 public class BuildCheck : MonoBehaviour
 {
-	private Button      button;
-	
+	public GameObject	player;
+	public Transform    prefBuliding;
+
 	// Start is called before the first frame update
 	void Start()
     {
-		button = this.transform.GetComponent<Button>();
-		if (button != null) {
-			button.onClick.AddListener(Destroy);
-		}
+		player = GameObject.Find("Player");
 	}
 
 	// Update is called once per frame
@@ -22,10 +20,16 @@ public class BuildCheck : MonoBehaviour
         
     }
 
-	void Destroy() {
-		int	size = gameObject.transform.childCount;
-
+	public void Destroy() {
 		GameObject.Find("CanvasInGame").transform.Find("BuildButton").gameObject.SetActive(true);
-		Destroy(gameObject.transform.parent.gameObject);
+		Destroy(gameObject.transform.parent.gameObject.transform.parent.gameObject);
+	}
+
+	public void Build() {
+		if (gameObject.transform.parent.gameObject.transform.parent.gameObject.GetComponent<CheckBuildLocation>().collisionCount == 0) {
+			Instantiate(prefBuliding, new Vector3(Mathf.Round(player.GetComponent<Transform>().position.x), Mathf.Round(player.GetComponent<Transform>().position.y + 2), Mathf.Round(player.GetComponent<Transform>().position.z)), Quaternion.identity);
+			GameObject.Find("CanvasInGame").transform.Find("BuildButton").gameObject.SetActive(true);
+			Destroy(gameObject.transform.parent.gameObject.transform.parent.gameObject);
+		}
 	}
 }
