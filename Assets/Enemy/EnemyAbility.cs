@@ -7,6 +7,8 @@ public class EnemyAbility : MonoBehaviour
 	public int  HP;
 	public int  maxHP;
 
+	private int	temp = 0;
+
 	// Start is called before the first frame update
 	void Start()
     {
@@ -16,6 +18,9 @@ public class EnemyAbility : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+		if (temp != HP) {
+			Debug.Log(HP);
+			temp = HP;
+		}
     }
 }
