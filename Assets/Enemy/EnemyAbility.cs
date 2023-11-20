@@ -6,8 +6,7 @@ public class EnemyAbility : MonoBehaviour
 {
 	public int  HP;
 	public int  maxHP;
-
-	private int	temp = 0;
+	public int	attackDamage = 5;
 
 	// Start is called before the first frame update
 	void Start()
@@ -16,11 +15,15 @@ public class EnemyAbility : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-		if (temp != HP) {
-			Debug.Log(HP);
-			temp = HP;
+		if (HP == maxHP) {
+			transform.GetChild(0).gameObject.SetActive(false);
+		} else {
+			transform.GetChild(0).gameObject.SetActive(true);
+		}
+		if (HP <= 0) {
+			Destroy(gameObject);
 		}
     }
 }

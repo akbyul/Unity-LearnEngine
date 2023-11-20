@@ -5,21 +5,28 @@ using UnityEngine;
 public class EnemyCollision : MonoBehaviour
 {
 	public GameObject	Player;
-	public int			attackDamage;
 
 	protected bool    isPlayerCollision = false;
 
-    // Start is called before the first frame update
-    void Start()
+	public float    collisionTime = 1f;
+	private float   collisionUpdateTime = 0.0f;
+
+	// Start is called before the first frame update
+	void Start()
     {
 		Player = GameObject.Find("Player");
 	}
 
     // Update is called once per frame
-    void Update() {
-		if (isPlayerCollision == true && Player.GetComponent<Ability>().isPossibleCollision == true) {
-			Player.GetComponent<Ability>().HP -= attackDamage;
-			Player.GetComponent<Ability>().isPossibleCollision = false;
+    void FixedUpdate() {
+		if (isPlayerCollision == true) {
+			collisionUpdateTime += Time.deltaTime;
+			if (collisionUpdateTime >= collisionTime) {
+				Player.GetComponent<Ability>().HP -= GetComponent<EnemyAbility>().attackDamage;
+				collisionUpdateTime -= collisionTime;
+			}
+		} else {
+			collisionUpdateTime = 1f;
 		}
 	}
 

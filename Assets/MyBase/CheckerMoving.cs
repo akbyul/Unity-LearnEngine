@@ -14,7 +14,7 @@ public class CheckerMoving : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 		transform.position = new Vector3(Mathf.Round(player.GetComponent<Transform>().position.x), Mathf.Round(player.GetComponent<Transform>().position.y + 2), Mathf.Round(player.GetComponent<Transform>().position.z));
 

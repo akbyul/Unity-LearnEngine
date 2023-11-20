@@ -12,10 +12,6 @@ public class Ability : MonoBehaviour
 	public float	coolTime;
 	private float	updateTime = 0.0f;
 
-	public bool		isPossibleCollision = true;	
-	public float	collisionTime;
-	private float	collisionUpdateTime = 0.0f;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -38,12 +34,5 @@ public class Ability : MonoBehaviour
 			HP = maxHP;
 		}
 
-		if (isPossibleCollision == false) {
-			collisionUpdateTime += Time.deltaTime;
-			if (collisionUpdateTime >= collisionTime) {
-				isPossibleCollision = true;
-				collisionUpdateTime = 0.0f;
-			}
-		}
 	}
 }
