@@ -11,19 +11,22 @@ public class BasicAttack : MonoBehaviour
 
 	private int		maxEnemyList = 20;
 	private int		isPossibleShot = 0;
-	private float	updateTime = 0f;
+	private float	updateTime;
 
 	// Start is called before the first frame update
 	void Start()
     {
         enemyList = new GameObject[21];
+		updateTime = coolTime;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-		if (isPossibleShot > 0) {
+		// 적이 1명 이상이고, 쏠 준비가 됐을때(방향조절 완료일 때)
+		if (isPossibleShot > 0 && gameObject.transform.parent.GetChild(1).gameObject.GetComponent<TurretRotation>().readyToShot == true) {
 			updateTime += Time.deltaTime;
+			// 쿨타임이 다 찼을 때,
 			if (updateTime >= coolTime) {
  				Instantiate(prefShot, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
 				updateTime -= coolTime;

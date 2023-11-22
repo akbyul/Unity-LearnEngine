@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Build : MonoBehaviour
 {
 	public GameObject	player;
-	public Transform	prefBuliding;
+	public Transform	prefBulidingChecker;
 	private Button		button;
 
 	// Start is called before the first frame update
@@ -25,7 +25,7 @@ public class Build : MonoBehaviour
     }
 
 	void build() {
-		Instantiate(prefBuliding, new Vector3(Mathf.Round(player.GetComponent<Transform>().position.x), Mathf.Round(player.GetComponent<Transform>().position.y + 2) , Mathf.Round(player.GetComponent<Transform>().position.z)), Quaternion.identity);
+		Instantiate(prefBulidingChecker, new Vector3(Mathf.Round(player.GetComponent<Transform>().position.x), Mathf.Round(player.GetComponent<Transform>().position.y + 2) , Mathf.Round(player.GetComponent<Transform>().position.z)), Quaternion.identity);
 	}
 
 }
