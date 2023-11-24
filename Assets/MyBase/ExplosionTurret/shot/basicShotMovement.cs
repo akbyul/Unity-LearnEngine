@@ -27,6 +27,8 @@ public class basicShotMovement : MonoBehaviour
 			Vector2 dir = new Vector2(target.transform.position.x - transform.position.x, target.transform.position.y - transform.position.y);
 			dir.Normalize();
 			transform.Translate(dir * speed * Time.deltaTime);
+		} else if (target == null && isCollision != true) {
+			Destroy(transform.parent.gameObject);
 		}
 	}
 
@@ -42,7 +44,7 @@ public class basicShotMovement : MonoBehaviour
 			isFirstSet = false;
 		}
 		// shot이 Enemy와 충돌시,
-		if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "EnemyCollider") {
+		if (other.gameObject.tag == "Enemy") {
 			isCollision = true;
 		}
 	}

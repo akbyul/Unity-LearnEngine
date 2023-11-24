@@ -25,38 +25,23 @@ public class explosion : MonoBehaviour
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.tag == "Enemy") {
 			currentCollision = other.gameObject;
-		} else if (other.gameObject.tag == "EnemyCollider") {
-			currentCollision = other.transform.parent.gameObject;
-		}
-		if (currentCollision != null && isAreadyCollision(currentCollision) == false) {
-			inputList(currentCollision);
+		} 
+		if (currentCollision != null && inputList(currentCollision) == 1) {
 			currentCollision.GetComponent<EnemyAbility>().HP -= transform.parent.gameObject.GetComponent<explosionShot>().explosionDamage;
 			currentCollision = null;
 		}
 	}
 
-	bool isAreadyCollision (GameObject currentCollision) {
-		for (int i = 0; i < maxEnemyList; i++) {
-			if (collisionList[i] == null) {
-				break ;
-			}
-			if (collisionList[i] == currentCollision) {
-				return (true);
-			}
-		}
-		return (false);
-	}
-
-	void inputList (GameObject currentCollision) {
+	int inputList (GameObject currentCollision) {
 		for (int i = 0; i < maxEnemyList; i++) {
 			if (collisionList[i] == currentCollision) {
-				break ;
+				return (0) ;
 			}
 			if (collisionList[i] == null) {
-				Debug.Log(i);
 				collisionList[i] = currentCollision;
-				break ;
+				return (1) ;
 			}
 		}
+		return (0);
 	}
 }

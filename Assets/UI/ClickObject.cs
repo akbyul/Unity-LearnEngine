@@ -9,6 +9,8 @@ public class ClickObject : MonoBehaviour
 	private GameObject	baseRange;
 	private Color		newColor;
 
+	public Transform    testCreation;
+
 	// Start is called before the first frame update
 	void Start()
     {
@@ -43,6 +45,7 @@ public class ClickObject : MonoBehaviour
 
 			// 클릭한곳이 UI가 아닐 시,
 			if (EventSystem.current.IsPointerOverGameObject() == false) {
+				Instantiate(testCreation, new Vector3(0, 0, 0), Quaternion.identity);
 
 				// base range 표시중, 다른곳을 클릭 시,
 				if (hit != isHitBase && baseRange != null) {
