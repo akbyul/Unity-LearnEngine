@@ -42,7 +42,7 @@ public class basicShotMovement : MonoBehaviour
 			isFirstSet = false;
 		}
 		// shot이 Enemy와 충돌시,
-		if (other.gameObject.tag == "Enemy") {
+		if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "EnemyCollider") {
 			isCollision = true;
 		}
 	}

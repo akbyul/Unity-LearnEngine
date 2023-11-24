@@ -9,6 +9,7 @@ TagManager:
   - range
   - Thorn
   - Weapon
+  - EnemyCollider
   layers:
   - Default
   - TransparentFX

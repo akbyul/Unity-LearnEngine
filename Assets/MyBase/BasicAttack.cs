@@ -9,14 +9,14 @@ public class BasicAttack : MonoBehaviour
 	public Transform		prefShot;
 	public float			coolTime;
 
-	private int		maxEnemyList = 20;
+	private int		maxEnemyList = 50;
 	private int		isPossibleShot = 0;
 	private float	updateTime;
 
 	// Start is called before the first frame update
 	void Start()
     {
-        enemyList = new GameObject[21];
+        enemyList = new GameObject[maxEnemyList];
 		updateTime = coolTime;
     }
 
@@ -54,6 +54,21 @@ public class BasicAttack : MonoBehaviour
 			}
 			isPossibleShot++;
 		}
+
+		// Enemy가 Turret의 공격범위 안에 들어오게 되면, Enemy List에 저장.
+		if (other.gameObject.tag == "EnemyCollider") {
+			for (int i = 0; i < maxEnemyList; i++) {
+				if (enemyList[i] == null) {
+					enemyList[i] = other.transform.parent.gameObject;
+					break ;
+				}
+			}
+			// 처음으로 들어온 Enemy를 nearest enemy로 설정.
+			if (isPossibleShot == 0) {
+				nearestEnemy = other.transform.parent.gameObject;
+			}
+			isPossibleShot++;
+		}
 	}
 
 	void OnTriggerExit2D(Collider2D other) {
@@ -66,6 +81,22 @@ public class BasicAttack : MonoBehaviour
 				}
 				// 삭제 후 update nearest Enemy 
 				if (enemyList[i].name == other.name) {
+					enemyList[i] = null;
+					nearestEnemy = getNearestEnemy();
+					break ;
+				}
+			}
+		}
+
+		// Enemy가 범위를 빠져나갈 시, Enemy List에서 삭제.
+		if (other.gameObject.tag == "EnemyCollider") {
+			isPossibleShot--;
+			for (int i = 0; i < maxEnemyList; i++) {
+				if (enemyList[i] == null) {
+					continue ;
+				}
+				// 삭제 후 update nearest Enemy 
+				if (enemyList[i].name == other.transform.parent.gameObject.name) {
 					enemyList[i] = null;
 					nearestEnemy = getNearestEnemy();
 					break ;
