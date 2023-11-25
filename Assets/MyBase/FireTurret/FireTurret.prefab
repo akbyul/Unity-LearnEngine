@@ -132,9 +132,9 @@ GameObject:
   - component: {fileID: 2549238523064537493}
   - component: {fileID: 7881637695942220471}
   - component: {fileID: 7820451005617285821}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FireTurret
-  m_TagString: Untagged
+  m_TagString: Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 1156866741645877077}
   m_Layer: 0
   m_Name: Circle
-  m_TagString: Untagged
+  m_TagString: range
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -436,6 +436,7 @@ GameObject:
   - component: {fileID: 6336820839966243814}
   - component: {fileID: 4642297674307195254}
   - component: {fileID: 6508915197544315525}
+  - component: {fileID: 1068419022048957018}
   m_Layer: 0
   m_Name: FireTurretAttack
   m_TagString: Untagged
@@ -561,6 +562,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAttack: 0
+  endAnimation: 0
+--- !u!114 &1068419022048957018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4714243211248248149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e423dbd95f071e54bb75c3ed0fcd54a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefFire: {fileID: 3926022771544267892, guid: 590759723763eb84a8316218bfb9308b, type: 3}
+  enemyList: []
 --- !u!1 &5226035562874067872
 GameObject:
   m_ObjectHideFlags: 0

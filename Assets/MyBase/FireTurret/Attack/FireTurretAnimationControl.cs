@@ -5,9 +5,10 @@ using UnityEngine;
 public class FireTurretAnimationControl : MonoBehaviour
 {
 	public bool	isAttack = false;
+	public bool	endAnimation = false;
 
-    // Start is called before the first frame update
-    void Start()
+	// Start is called before the first frame update
+	void Start()
     {
 	}
 

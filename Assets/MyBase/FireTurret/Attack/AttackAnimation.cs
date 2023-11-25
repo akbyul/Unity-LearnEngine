@@ -22,5 +22,6 @@ public class AttackAnimation : MonoBehaviour
 	void endAttack() {
 		fireTurretAttackAnimation.SetBool("startAttack", false);
 		transform.parent.gameObject.SetActive(false);
+		transform.parent.gameObject.GetComponent<FireTurretAnimationControl>().endAnimation = true;
 	}
 }

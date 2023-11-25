@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveToPlayer : MonoBehaviour {
+public class EnemyMovement : MonoBehaviour {
 
 	public GameObject	Player;
 	public int			speed;

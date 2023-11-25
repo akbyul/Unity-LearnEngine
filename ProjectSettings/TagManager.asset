@@ -10,6 +10,7 @@ TagManager:
   - Thorn
   - Weapon
   - EnemyCollider
+  - DOT
   layers:
   - Default
   - TransparentFX
