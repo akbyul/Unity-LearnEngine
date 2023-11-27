@@ -27,8 +27,9 @@ public class BuildCheck : MonoBehaviour
 
 	public void Build() {
 		if (gameObject.transform.parent.gameObject.transform.parent.gameObject.GetComponent<CheckBuildLocation>().collisionCount == 0) {
-			Instantiate(prefBuliding, new Vector3(Mathf.Round(player.GetComponent<Transform>().position.x), Mathf.Round(player.GetComponent<Transform>().position.y + 2), Mathf.Round(player.GetComponent<Transform>().position.z)), Quaternion.identity);
 			GameObject.Find("CanvasInGame").transform.Find("BuildButton").gameObject.SetActive(true);
+			GameObject newInstance = Instantiate(prefBuliding, new Vector3(Mathf.Round(player.GetComponent<Transform>().position.x), Mathf.Round(player.GetComponent<Transform>().position.y + 2), Mathf.Round(player.GetComponent<Transform>().position.z)), Quaternion.identity).gameObject;
+			GameObject.Find("MainBase").GetComponent<BasesControl>().baseList.add(newInstance);
 			Destroy(gameObject.transform.parent.gameObject.transform.parent.gameObject);
 		}
 	}

@@ -183,6 +183,10 @@ PrefabInstance:
       propertyPath: prefBuliding
       value: 
       objectReference: {fileID: 5431383127259947098, guid: 21462f108bba8264494822b121e14441, type: 3}
+    - target: {fileID: 7566936741249987549, guid: baa8603de4983234a866aeb5ab2d8c3c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7957096874796371369, guid: baa8603de4983234a866aeb5ab2d8c3c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
