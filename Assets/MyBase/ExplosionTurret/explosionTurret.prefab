@@ -248,6 +248,7 @@ GameObject:
   - component: {fileID: 5839351823803867222}
   - component: {fileID: 8203629502097792622}
   - component: {fileID: 9185034067039458594}
+  - component: {fileID: 3561343478613764898}
   m_Layer: 7
   m_Name: explosionTurret
   m_TagString: Base
@@ -404,3 +405,15 @@ PolygonCollider2D:
       - {x: 0.08018065, y: 0.05026497}
       - {x: 0.0498102, y: 0.08018065}
   m_UseDelaunayMesh: 0
+--- !u!114 &3561343478613764898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8961339309749120592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d534ffea0a78db24280482fe88328af2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

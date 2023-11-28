@@ -2,20 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAbility : MonoBehaviour
+public class EnemyAbility : Ability
 {
-	public int  HP;
-	public int  maxHP;
-	public int	attackDamage = 5;
-
 	// Start is called before the first frame update
-	void Start()
+	protected override void Start()
     {
-        
-    }
+		attackDamage = 50;
+		HP = maxHP;
+	}
 
-    // Update is called once per frame
-    void FixedUpdate()
+	// Update is called once per frame
+	protected override void FixedUpdate()
     {
 		if (HP == maxHP) {
 			transform.GetChild(0).gameObject.SetActive(false);

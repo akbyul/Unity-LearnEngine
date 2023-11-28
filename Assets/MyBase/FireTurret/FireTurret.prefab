@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 2549238523064537493}
   - component: {fileID: 7881637695942220471}
   - component: {fileID: 7820451005617285821}
+  - component: {fileID: 1033043233488365285}
   m_Layer: 7
   m_Name: FireTurret
   m_TagString: Base
@@ -288,6 +289,18 @@ PolygonCollider2D:
       - {x: 0.08, y: 0.04}
       - {x: 0.04, y: 0.08}
   m_UseDelaunayMesh: 0
+--- !u!114 &1033043233488365285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433260920523890447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d534ffea0a78db24280482fe88328af2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2968475076936954025
 GameObject:
   m_ObjectHideFlags: 0

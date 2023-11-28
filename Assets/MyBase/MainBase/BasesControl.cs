@@ -5,20 +5,20 @@ using UnityEngine;
 public class LinkedList {
 	public GameObject   myObject;
 	public int          objectCount = 0;
-	public LinkedList   prev;
 	public LinkedList   next;
+	public LinkedList   prev;
 
 	public LinkedList(GameObject gameObject, string isHeader) {
 		myObject = gameObject;
 		objectCount = 1;
-		prev = null;
 		next = null;
+		prev = null;
 	}
 
 	public LinkedList(GameObject gameObject) {
 		myObject = gameObject;
-		prev = null;
 		next = null;
+		prev = null;
 	}
 
 	public void add(GameObject newGameObject) {
@@ -27,19 +27,25 @@ public class LinkedList {
 		this.objectCount++;
 		newNode.next = this.next;
 		newNode.prev = this;
+		Debug.Log(newNode.prev.myObject);
+		if (this.next != null) {
+			this.next.prev = newNode;
+		}
 		this.next = newNode;
 	}
 
-	public void update() {
+	public void delete(GameObject gameObject) {
 		LinkedList  curr = this.next;
 		LinkedList  next;
 
 		while (curr != null) {
 			next = curr.next;
-			if (curr.myObject == null) {
+			if (curr.myObject == gameObject) {
 				this.objectCount--;
 				curr.prev.next = curr.next;
-				curr.next.prev = curr.prev;
+				if (next != null) {
+					next.prev = curr.prev;
+				}
 			}
 			curr = next;
 		}
@@ -62,6 +68,16 @@ public class LinkedList {
 			curr = curr.next;
 		}
 		return (nearestObject);
+	}
+
+	public void printBaseList() {
+		LinkedList	curr = this;
+		
+		while (curr != null) {
+			Debug.Log(curr.myObject);
+			curr = curr.next;
+		}
+		Debug.Log(curr.prev.myObject);
 	}
 }
 

@@ -19,7 +19,7 @@ public class Fire : MonoBehaviour
     {
 		int	countDOT = 0;
 
-        transform.parent.gameObject.GetComponent<EnemyAbility>().HP -= firstDamage;
+        transform.parent.gameObject.GetComponent<EnemyAbility>().damageAD(firstDamage);
 		for (int i = 0; i < transform.parent.childCount; i++) {
 			if (transform.parent.GetChild(i).gameObject.tag == "DOT") {
 				countDOT++;
@@ -41,7 +41,7 @@ public class Fire : MonoBehaviour
 				pivotTime -= 0.1f;
 			}
 			if (damageStack >= 1) {
-				transform.parent.gameObject.GetComponent<EnemyAbility>().HP -= 1;
+				transform.parent.gameObject.GetComponent<EnemyAbility>().damageAD(1);
 				damageStack -= 1;
 			}
 		} else if (updateTime > endDOTTime) {

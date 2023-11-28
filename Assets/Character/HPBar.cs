@@ -18,7 +18,7 @@ public class HPBar : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		mySlider.maxValue = Player.GetComponent<Ability>().maxHP;
-		mySlider.value = Player.GetComponent<Ability>().HP;
+		mySlider.maxValue = Player.GetComponent<PlayerAbility>().getMaxHP();
+		mySlider.value = Player.GetComponent<PlayerAbility>().getHP();
 	}
 }

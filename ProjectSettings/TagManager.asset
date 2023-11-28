@@ -11,6 +11,7 @@ TagManager:
   - Weapon
   - EnemyCollider
   - DOT
+  - UI
   layers:
   - Default
   - TransparentFX

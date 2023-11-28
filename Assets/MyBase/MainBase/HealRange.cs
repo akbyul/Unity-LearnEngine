@@ -6,11 +6,11 @@ public class HealRange : MonoBehaviour
 {
 	public GameObject	Player;
 
-	public int	HealAmount;
-	public int	HealCoolTime;
+	public int	healAmount;
+	public int	healCoolTime;
 	
 	private float	updateTime = 0.0f;
-	private bool	isPossibleHeal = true;
+	private bool	isPossibleHeal = false;
 
     // Start is called before the first frame update
     void Start()
@@ -21,10 +21,10 @@ public class HealRange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (updateTime >= HealCoolTime) {
+		if (updateTime >= healCoolTime) {
 			updateTime = 0.0f;
 			if (isPossibleHeal == true) {
-				Player.GetComponent<Ability>().HP += HealAmount;
+				Player.GetComponent<PlayerAbility>().heal(healAmount);
 			}
 		} else {
 			updateTime += Time.deltaTime;
@@ -33,10 +33,14 @@ public class HealRange : MonoBehaviour
     }
 
 	void OnTriggerEnter2D(Collider2D collider) {
-		isPossibleHeal = true;
+		if (collider.gameObject.CompareTag("Player")) {
+			isPossibleHeal = true;
+		}
 	}
 
 	void OnTriggerExit2D(Collider2D collider) {
-		isPossibleHeal = false;
+		if (collider.gameObject.CompareTag("Player")) {
+			isPossibleHeal = false;
+		}
 	}
 }

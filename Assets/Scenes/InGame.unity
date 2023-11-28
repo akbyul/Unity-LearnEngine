@@ -1342,10 +1342,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdc330981f4943f42bbe92bae3a96043, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 60
-  maxHP: 100
-  heal: 2
-  coolTime: 5
 --- !u!50 &442795036
 Rigidbody2D:
   serializedVersion: 4
@@ -1600,6 +1596,14 @@ PrefabInstance:
     - target: {fileID: 3777136753576057506, guid: 52b037f757a7a734583c4ae6b4ea27ad, type: 3}
       propertyPath: m_Name
       value: MainBase
+      objectReference: {fileID: 0}
+    - target: {fileID: 6270230855987853615, guid: 52b037f757a7a734583c4ae6b4ea27ad, type: 3}
+      propertyPath: healAmount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6270230855987853615, guid: 52b037f757a7a734583c4ae6b4ea27ad, type: 3}
+      propertyPath: healCoolTime
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7903845957665756993, guid: 52b037f757a7a734583c4ae6b4ea27ad, type: 3}
       propertyPath: m_LocalPosition.x

@@ -27,7 +27,7 @@ public class explosion : MonoBehaviour
 			currentCollision = other.gameObject;
 		} 
 		if (currentCollision != null && inputList(currentCollision) == 1) {
-			currentCollision.GetComponent<EnemyAbility>().HP -= transform.parent.gameObject.GetComponent<explosionShot>().explosionDamage;
+			currentCollision.GetComponent<EnemyAbility>().damageAD(transform.parent.gameObject.GetComponent<explosionShot>().explosionDamage);
 			currentCollision = null;
 		}
 	}

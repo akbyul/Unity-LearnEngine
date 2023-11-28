@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class ShliderHP : MonoBehaviour
+public class SliderHP : MonoBehaviour
 {
 	private GameObject		Player;
 	public TextMeshProUGUI	textHP;
@@ -17,8 +17,8 @@ public class ShliderHP : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        textHP.text = (Player.GetComponent<Ability>().HP + " / " + Player.GetComponent<Ability>().maxHP);
+        textHP.text = (Player.GetComponent<PlayerAbility>().getHP() + " / " + Player.GetComponent<PlayerAbility>().getMaxHP());
     }
 }

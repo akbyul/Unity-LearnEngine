@@ -14,8 +14,8 @@ public class EnemyHPBar : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-		int MaxHP = transform.parent.gameObject.transform.parent.gameObject.transform.parent.gameObject.GetComponent<EnemyAbility>().maxHP;
-		int HP = transform.parent.gameObject.transform.parent.gameObject.transform.parent.gameObject.GetComponent<EnemyAbility>().HP;
+		int MaxHP = transform.parent.gameObject.transform.parent.gameObject.transform.parent.gameObject.GetComponent<EnemyAbility>().getMaxHP();
+		int HP = transform.parent.gameObject.transform.parent.gameObject.transform.parent.gameObject.GetComponent<EnemyAbility>().getHP();
 
 		GetComponent<RectTransform>().sizeDelta = new Vector2((float)HP / (float)MaxHP, 0.05f);
     }
