@@ -22,7 +22,7 @@ public class BasicAttack : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
 		// 적이 1명 이상이고, 쏠 준비가 됐을때(방향조절 완료일 때)
 		if (isPossibleShot > 0 && customif() == true) {
@@ -51,7 +51,7 @@ public class BasicAttack : MonoBehaviour
 		Instantiate(prefShot, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
 	}
 
-	void OnTriggerEnter2D(Collider2D other) {
+	private void OnTriggerEnter2D(Collider2D other) {
 		// Enemy가 Turret의 공격범위 안에 들어오게 되면, Enemy List에 저장.
 		if (other.gameObject.tag == "Enemy") {
 			for (int i = 0; i < maxEnemyList; i++) {
@@ -68,7 +68,7 @@ public class BasicAttack : MonoBehaviour
 		}
 	}
 
-	void OnTriggerExit2D(Collider2D other) {
+	private void OnTriggerExit2D(Collider2D other) {
 		// Enemy가 범위를 빠져나갈 시, Enemy List에서 삭제.
 		if (other.gameObject.tag == "Enemy") {
 			isPossibleShot--;

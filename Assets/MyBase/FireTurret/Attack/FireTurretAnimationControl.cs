@@ -13,7 +13,7 @@ public class FireTurretAnimationControl : MonoBehaviour
 	}
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (isAttack == true) {
 			for (int i = 0; i < 4; i++) {

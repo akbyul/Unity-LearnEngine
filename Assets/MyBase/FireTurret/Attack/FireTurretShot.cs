@@ -15,12 +15,6 @@ public class FireTurretShot : MonoBehaviour
 		enemyList = new GameObject[maxEnemyList];
 	}
 
-	// Update is called once per frame
-	void Update()
-    {
-        
-    }
-
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.tag == "Enemy" && inputList(other.gameObject) == 1) {
 			GameObject fire = Instantiate(prefFire, new Vector3(0, 0, 0), Quaternion.identity).gameObject;
@@ -34,12 +28,12 @@ public class FireTurretShot : MonoBehaviour
 
 	int inputList(GameObject enemy) {
 		for (int i = 0; i < maxEnemyList; i++) {
-			if (enemyList[i] == enemy) {
-				return (0);
-			}
 			if (enemyList[i] == null) {
 				enemyList[i] = enemy;
 				return (1);
+			}
+			if (enemyList[i] == enemy) {
+				return (0);
 			}
 		}
 		return (0);
