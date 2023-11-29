@@ -5,12 +5,13 @@ using UnityEngine;
 public class LinkedList {
 	public GameObject   myObject;
 	public int          objectCount = 0;
+
 	public LinkedList   next;
 	public LinkedList   prev;
 
-	public LinkedList(GameObject gameObject, string isHeader) {
-		myObject = gameObject;
-		objectCount = 1;
+
+	public LinkedList(string isHeader) {
+		myObject = null;
 		next = null;
 		prev = null;
 	}
@@ -27,7 +28,6 @@ public class LinkedList {
 		this.objectCount++;
 		newNode.next = this.next;
 		newNode.prev = this;
-		Debug.Log(newNode.prev.myObject);
 		if (this.next != null) {
 			this.next.prev = newNode;
 		}
@@ -36,10 +36,10 @@ public class LinkedList {
 
 	public void delete(GameObject gameObject) {
 		LinkedList  curr = this.next;
-		LinkedList  next;
+		LinkedList  nextTemp;
 
 		while (curr != null) {
-			next = curr.next;
+			nextTemp = curr.next;
 			if (curr.myObject == gameObject) {
 				this.objectCount--;
 				curr.prev.next = curr.next;
@@ -47,7 +47,7 @@ public class LinkedList {
 					next.prev = curr.prev;
 				}
 			}
-			curr = next;
+			curr = nextTemp;
 		}
 	}
 
@@ -55,19 +55,23 @@ public class LinkedList {
 		GameObject	nearestObject;
 		float		nearestDistance;
 		float		distance;
-		LinkedList	curr = this.next;
+		LinkedList	curr;
 
-		nearestObject = this.myObject;
-		nearestDistance = Vector3.Distance(nearestObject.transform.position, gameObject.transform.position);
-		while (curr != null) {
-			distance = Vector3.Distance(curr.myObject.transform.position, gameObject.transform.position);
-			if (nearestDistance > distance) {
-				nearestObject = curr.myObject;
-				nearestDistance = distance;
+		if (this.objectCount >= 1) {
+			curr = this.next.next;
+			nearestObject = this.next.myObject;
+			nearestDistance = Vector3.Distance(nearestObject.transform.position, gameObject.transform.position);
+			while (curr != null) {
+				distance = Vector3.Distance(curr.myObject.transform.position, gameObject.transform.position);
+				if (nearestDistance > distance) {
+					nearestObject = curr.myObject;
+					nearestDistance = distance;
+				}
+				curr = curr.next;
 			}
-			curr = curr.next;
+			return (nearestObject);
 		}
-		return (nearestObject);
+		return (null);
 	}
 
 	public void printBaseList() {
@@ -88,6 +92,7 @@ public class BasesControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        baseList = new LinkedList(gameObject, "isHeader");
+        baseList = new LinkedList("isHeader");
+		baseList.add(gameObject);
     }
 }

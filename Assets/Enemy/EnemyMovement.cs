@@ -8,13 +8,16 @@ public class EnemyMovement : MonoBehaviour {
 	public int			speed;
 	public float		collisionTime = 1f;
 
+	public Animator		enemyAnimation;
+
 	private GameObject	collisionObject;
 	private float		collisionUpdateTime = 0.0f;
 
 	private GameObject	mainBase;
 
-    // Start is called before the first frame update
-    void Start()
+
+	// Start is called before the first frame update
+	void Start()
     {
 		player = GameObject.Find("Player");
 		mainBase = GameObject.Find("MainBase");
@@ -82,6 +85,7 @@ public class EnemyMovement : MonoBehaviour {
 	}
 
 	GameObject getNearestObject(GameObject nearestBase) {
+		if (nearestBase == null) return (null);
 		float baseDistance = Vector3.Distance(nearestBase.transform.position, transform.position);
 		float playerDistance = Vector3.Distance(player.transform.position, transform.position);
 		if (baseDistance + 0.5 < playerDistance) {
