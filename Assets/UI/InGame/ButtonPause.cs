@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ButtonPause : MonoBehaviour
 {
@@ -10,5 +11,10 @@ public class ButtonPause : MonoBehaviour
 
 	public void OnClickedContinueButton() {
 		Time.timeScale = 1.0f;
+	}
+
+	public void OnClickedExitButton() {
+		Time.timeScale = 1.0f;
+		SceneManager.LoadScene("MainMenu");
 	}
 }

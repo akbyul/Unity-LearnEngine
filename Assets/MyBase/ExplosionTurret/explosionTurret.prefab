@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 9185034067039458594}
   - component: {fileID: 3561343478613764898}
   m_Layer: 7
-  m_Name: explosionTurret
+  m_Name: ExplosionTurret
   m_TagString: Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

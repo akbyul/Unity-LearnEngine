@@ -4,10 +4,23 @@ using UnityEngine;
 
 public class EnemyAbility : Ability
 {
+	private GameObject	enemy;
+
 	// Start is called before the first frame update
 	protected override void Start()
     {
-		attackDamage = 50;
+		enemy = gameObject;
+		switch (enemy.name) {
+			case "GreenSlime(Clone)" :
+				setEnemyAbility(50, 0, 0, 0, 5);
+				break ;
+			case "EnemyDust(Clone)" :
+				setEnemyAbility(20, 0, 0, 0, 10);
+				break;
+			default :
+				setEnemyAbility(100, 0, 0, 0, 0);
+				break;
+		}
 		HP = maxHP;
 	}
 
@@ -23,4 +36,12 @@ public class EnemyAbility : Ability
 			Destroy(gameObject);
 		}
     }
+
+	private void setEnemyAbility(int maxHP, int repair, int adDef, int apDef, int attackDamage) {
+		this.maxHP = maxHP;
+		this.repair = repair;
+		this.adDef = adDef;
+		this.apDef = apDef;
+		this.attackDamage = attackDamage;
+	}
 }

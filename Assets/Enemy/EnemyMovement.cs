@@ -5,10 +5,11 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour {
 
 	public GameObject	player;
-	public int			speed;
 	public float		collisionTime = 1f;
 
-	public Animator		enemyAnimation;
+	private int			speed;
+	private GameObject	enemy;
+	private int         animationCount;
 
 	private GameObject	collisionObject;
 	private float		collisionUpdateTime = 0.0f;
@@ -19,6 +20,18 @@ public class EnemyMovement : MonoBehaviour {
 	// Start is called before the first frame update
 	void Start()
     {
+		enemy = gameObject;
+		switch (enemy.name) {
+			case "GreenSlime(Clone)":
+				setMove(1, 4);
+				break;
+			case "EnemyDust(Clone)":
+				setMove(2, 2);
+				break;
+			default:
+				setMove(1, 1);
+				break;
+		}
 		player = GameObject.Find("Player");
 		mainBase = GameObject.Find("MainBase");
 	}
@@ -75,9 +88,9 @@ public class EnemyMovement : MonoBehaviour {
 		}
 	}
 
-	void GreenSlimeWalk(int i) {
+	void EnemyWalk(int i) {
 		if (i == 0) {
-			transform.GetChild(4).gameObject.SetActive(false);
+			transform.GetChild(this.animationCount).gameObject.SetActive(false);
 		} else {
 			transform.GetChild(i).gameObject.SetActive(false);
 		}
@@ -93,5 +106,10 @@ public class EnemyMovement : MonoBehaviour {
 		} else {
 			return (player);
 		}
+	}
+
+	private void setMove(int speed, int animationCount) {
+		this.speed = speed;
+		this.animationCount = animationCount;
 	}
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class ClickObject : MonoBehaviour
 {
@@ -10,12 +11,8 @@ public class ClickObject : MonoBehaviour
 	private Color		newColor;
 
 	public Transform    testCreation;
-
-	// Start is called before the first frame update
-	void Start()
-    {
-        
-    }
+	public GameObject	buildButton;
+	public GameObject	baseInfo;
 
 
 	// Update is called once per frame
@@ -45,35 +42,46 @@ public class ClickObject : MonoBehaviour
 
 			// 클릭한곳이 UI가 아닐 시,
 			if (EventSystem.current.IsPointerOverGameObject() == false) {
-				Instantiate(testCreation, new Vector3(0, 0, 0), Quaternion.identity);
-
+/*				Instantiate(testCreation, new Vector3(0, 0, 0), Quaternion.identity);
+*/
 				// base range 표시중, 다른곳을 클릭 시,
 				if (hit != isHitBase && baseRange != null) {
-					hideBaseRange(isHitBase);
+					hideBaseInfo();
 				}
 
 				// base 클릭 시,
 				if (isHitBase.collider != null) {
 					// 이미 다른 base range 표시중이면,
 					if (baseRange != null) {
-						hideBaseRange(isHitBase);
+						hideBaseInfo();
 					}
-						showBaseRange(isHitBase);
+						showBaseInfo(isHitBase);
 				}
 			}
 		}
 	}
 
-	void showBaseRange(RaycastHit2D isHitBase) {
+	void showBaseInfo(RaycastHit2D isHitBase) {
 		baseRange = isHitBase.transform.GetChild(0).gameObject;
 		newColor = baseRange.GetComponent<SpriteRenderer>().color;
 		newColor.a = 0.1f;
 		baseRange.GetComponent<SpriteRenderer>().color = newColor;
+
+		buildButton.SetActive(false);
+		baseInfo.SetActive(true);
+		baseInfo.GetComponent<baseInfo>().baseObject = isHitBase.collider.gameObject;
+		baseInfo.GetComponent<baseInfo>().setName();
 	}
 
-	void hideBaseRange(RaycastHit2D isHitBase) {
-		newColor.a = 0.0f;
-		baseRange.GetComponent<SpriteRenderer>().color = newColor;
-		baseRange = null;
+	public void hideBaseInfo() {
+		if (baseRange != null) {
+			newColor.a = 0.0f;
+			baseRange.GetComponent<SpriteRenderer>().color = newColor;
+			baseRange = null;
+
+			baseInfo.GetComponent<baseInfo>().baseObject = null;
+			baseInfo.SetActive(false);
+			buildButton.SetActive(true);
+		}
 	}
 }

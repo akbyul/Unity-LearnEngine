@@ -325,5 +325,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  healAmount: 0
-  healCoolTime: 0
+  healAmount: 5
+  healCoolTime: 2

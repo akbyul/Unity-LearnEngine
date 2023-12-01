@@ -184,7 +184,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 1, b: 0.47505832, a: 1}
   m_FlipX: 0
@@ -246,7 +246,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 442795029}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -413,14 +413,6 @@ PrefabInstance:
     - target: {fileID: 3777136753576057506, guid: 52b037f757a7a734583c4ae6b4ea27ad, type: 3}
       propertyPath: m_Name
       value: MainBase
-      objectReference: {fileID: 0}
-    - target: {fileID: 6270230855987853615, guid: 52b037f757a7a734583c4ae6b4ea27ad, type: 3}
-      propertyPath: healAmount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6270230855987853615, guid: 52b037f757a7a734583c4ae6b4ea27ad, type: 3}
-      propertyPath: healCoolTime
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7903845957665756993, guid: 52b037f757a7a734583c4ae6b4ea27ad, type: 3}
       propertyPath: m_LocalPosition.x
@@ -597,63 +589,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1001 &965942148
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3806258714524897887, guid: cada8cad200138645a57dd3b6c0efe83, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.6417005
-      objectReference: {fileID: 0}
-    - target: {fileID: 3806258714524897887, guid: cada8cad200138645a57dd3b6c0efe83, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.7765248
-      objectReference: {fileID: 0}
-    - target: {fileID: 3806258714524897887, guid: cada8cad200138645a57dd3b6c0efe83, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3806258714524897887, guid: cada8cad200138645a57dd3b6c0efe83, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3806258714524897887, guid: cada8cad200138645a57dd3b6c0efe83, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3806258714524897887, guid: cada8cad200138645a57dd3b6c0efe83, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3806258714524897887, guid: cada8cad200138645a57dd3b6c0efe83, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3806258714524897887, guid: cada8cad200138645a57dd3b6c0efe83, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3806258714524897887, guid: cada8cad200138645a57dd3b6c0efe83, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3806258714524897887, guid: cada8cad200138645a57dd3b6c0efe83, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9053738208400560547, guid: cada8cad200138645a57dd3b6c0efe83, type: 3}
-      propertyPath: m_Name
-      value: GreenSlime (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: cada8cad200138645a57dd3b6c0efe83, type: 3}
 --- !u!1 &1653945588
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,6 +676,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1517871779224012475, guid: cc481135911e26c419474b25ee0644b6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2104581759331096666, guid: cc481135911e26c419474b25ee0644b6, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -854,5 +793,4 @@ SceneRoots:
   - {fileID: 442795032}
   - {fileID: 5364957314633679678}
   - {fileID: 943202837}
-  - {fileID: 965942148}
   - {fileID: 548049434}

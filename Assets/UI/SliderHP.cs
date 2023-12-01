@@ -7,7 +7,7 @@ using TMPro;
 public class SliderHP : MonoBehaviour
 {
 	private GameObject		Player;
-	public TextMeshProUGUI	textHP;
+	private TextMeshProUGUI	textHP;
 
     // Start is called before the first frame update
     void Start()

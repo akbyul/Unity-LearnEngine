@@ -105,7 +105,7 @@ ScriptedImporter:
       y: 4
       width: 72
       height: 127
-    spriteID: 0eb8d0a2aaa56e947bc5539c17e29c6c
+    spriteID: b520f87ef1023824ba2ea4aca55f6c62
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -213,7 +213,7 @@ ScriptedImporter:
     spriteName: L1
     isGroup: 0
     parentIndex: -1
-    spriteID: 0eb8d0a2aaa56e947bc5539c17e29c6c
+    spriteID: b520f87ef1023824ba2ea4aca55f6c62
     layerID: 0
     mosaicPosition: {x: 4, y: 4}
     flatten: 0
@@ -222,7 +222,7 @@ ScriptedImporter:
   sharedRigPSDLayers: []
   pSDLayerImportSetting: []
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638368899936129669
+  platformSettingsDirtyTick: 638369843813117782
   spriteSizeExpandChanged: 0
   generateGOHierarchy: 0
   textureAssetName: 
