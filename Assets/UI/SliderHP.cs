@@ -19,6 +19,7 @@ public class SliderHP : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        textHP.text = (Player.GetComponent<PlayerAbility>().getHP() + " / " + Player.GetComponent<PlayerAbility>().getMaxHP());
+        /*textHP.text = (Player.GetComponent<PlayerAbility>().getHP() + " / " + Player.GetComponent<PlayerAbility>().getMaxHP());*/
+        textHP.text = ("" + Player.GetComponent<PlayerAbility>().getHP());
     }
 }

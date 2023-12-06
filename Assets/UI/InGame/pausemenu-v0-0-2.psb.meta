@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8746b68295f42934f962ec887aa45ac5
+guid: 17cf71f60c70a3c41b8010e9ddf1d5f7
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -103,9 +103,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 150
-      height: 200
-    spriteID: c1ca7b5410287a343998166cbbfcac75
+      width: 82
+      height: 82
+    spriteID: 8f4abde71e6883845b454ff4bf22cc1c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -113,8 +113,8 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: -308}
-    spritePosition: {x: 0, y: 312}
+    uvTransform: {x: -19, y: 3}
+    spritePosition: {x: 23, y: 1}
   characterData:
     bones: []
     parts: []
@@ -213,7 +213,7 @@ ScriptedImporter:
     spriteName: L1
     isGroup: 0
     parentIndex: -1
-    spriteID: c1ca7b5410287a343998166cbbfcac75
+    spriteID: 8f4abde71e6883845b454ff4bf22cc1c
     layerID: 0
     mosaicPosition: {x: 4, y: 4}
     flatten: 0
@@ -222,7 +222,7 @@ ScriptedImporter:
   sharedRigPSDLayers: []
   pSDLayerImportSetting: []
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638370471672421843
+  platformSettingsDirtyTick: 638374771860796310
   spriteSizeExpandChanged: 0
   generateGOHierarchy: 0
   textureAssetName: 
