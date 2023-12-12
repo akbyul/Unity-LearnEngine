@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 17cf71f60c70a3c41b8010e9ddf1d5f7
+guid: 5cb16112f0ef30642a1baf43e7368e86
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -23,7 +23,7 @@ ScriptedImporter:
     normalMapFilter: 0
     flipGreenChannel: 0
     swizzle: 50462976
-    isReadable: 0
+    isReadable: 1
     streamingMipmaps: 1
     streamingMipmapsPriority: 0
     vTOnly: 0
@@ -71,18 +71,18 @@ ScriptedImporter:
     textureFormatSet: 0
     applyGammaDecoding: 0
   spriteImportData:
-  - name: pausemenu-v0-0-2_1
+  - name: 
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 0
       y: 0
-      width: 128
-      height: 128
-    spriteID: 6f56d1358e28288418f444524d586162
+      width: 0
+      height: 0
+    spriteID: 
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -103,18 +103,27 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 82
-      height: 82
-    spriteID: 8f4abde71e6883845b454ff4bf22cc1c
+      width: 517
+      height: 333
+    spriteID: 00475394d8405944bb11b677cfa00ff5
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 245.5, y: 166.5}
+      - {x: -26.5, y: 38.5}
+      - {x: -110.5, y: 120.5}
+      - {x: -125.5, y: 122.5}
+      - {x: -258.5, y: -159.5}
+      - {x: -258.5, y: -166.5}
+      - {x: 258.5, y: -166.5}
+      - {x: 258.5, y: 166.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: -19, y: 3}
-    spritePosition: {x: 23, y: 1}
+    uvTransform: {x: -1469, y: -1627}
+    spritePosition: {x: 1473, y: 1631}
   characterData:
     bones: []
     parts: []
@@ -213,7 +222,7 @@ ScriptedImporter:
     spriteName: L1
     isGroup: 0
     parentIndex: -1
-    spriteID: 8f4abde71e6883845b454ff4bf22cc1c
+    spriteID: 00475394d8405944bb11b677cfa00ff5
     layerID: 0
     mosaicPosition: {x: 4, y: 4}
     flatten: 0
@@ -222,7 +231,7 @@ ScriptedImporter:
   sharedRigPSDLayers: []
   pSDLayerImportSetting: []
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638374771860796310
+  platformSettingsDirtyTick: 638379967581342965
   spriteSizeExpandChanged: 0
   generateGOHierarchy: 0
   textureAssetName: 
